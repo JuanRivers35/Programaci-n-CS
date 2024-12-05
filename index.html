@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ventanas Combinadas</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa; /* Fondo claro */
+        }
+        .ventana {
+            background-color: #4caf50; /* Verde */
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px auto;
+            max-width: 900px;
+        }
+        .boton {
+            margin: 5px;
+        }
+        .buscar {
+            display: flex;
+            align-items: center;
+            margin-top: 15px;
+        }
+        .buscar input {
+            margin-right: 10px;
+        }
+        .tab-content > .tab-pane {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="ventana shadow-lg">
+        <h2 class="text-center">FENSTER</h2>
+        <ul class="nav nav-tabs mb-3" id="ventanaTabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="cliente-tab" data-bs-toggle="tab" href="#cliente" role="tab" aria-controls="cliente" aria-selected="true">Cliente</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="cita-tab" data-bs-toggle="tab" href="#cita" role="tab" aria-controls="cita" aria-selected="false">Cita</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="ventanaorden-tab" data-bs-toggle="tab" href="#ventanaorden" role="tab" aria-controls="ventanaorden" aria-selected="false">VentanaOrden</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="ventanaTabContent">
+            <!-- Cliente Tab -->
+            <div class="tab-pane fade show active" id="cliente" role="tabpanel" aria-labelledby="cliente-tab">
+                <div class="row">
+                    <div class="col-md-6">
+                        <form>
+                            <div class="mb-3">
+                                <label for="id_c" class="form-label">Id_C</label>
+                                <input type="text" id="id_c" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="nombre" class="form-label">Nombre</label>
+                                <input type="text" id="nombre" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="correo" class="form-label">Correo</label>
+                                <input type="email" id="correo" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="telefono" class="form-label">Teléfono</label>
+                                <input type="text" id="telefono" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="direccion" class="form-label">Dirección</label>
+                                <input type="text" id="direccion" class="form-control">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <button class="btn btn-success boton">Agregar</button>
+                        <button class="btn btn-primary boton">Modificar</button>
+                        <button class="btn btn-warning boton">Consulta Gral</button>
+                        <button class="btn btn-danger boton">Eliminar</button>
+
+                        <div class="buscar">
+                            <input type="text" class="form-control" placeholder="Id_C">
+                            <button class="btn btn-info">Buscar</button>
+                        </div>
+                    </div>
+                </div>
+                <table class="table table-striped table-hover mt-4">
+                    <thead>
+                        <tr>
+                            <th>Id_C</th>
+                            <th>Nombre</th>
+                            <th>Correo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Juan Pérez</td>
+                            <td>juan@example.com</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>María Gómez</td>
+                            <td>maria@example.com</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Cita Tab -->
+            <div class="tab-pane fade" id="cita" role="tabpanel" aria-labelledby="cita-tab">
+                <div class="row">
+                    <div class="col-md-6">
+                        <form>
+                            <div class="mb-3">
+                                <label for="id_ct" class="form-label">Id_Ct</label>
+                                <input type="text" id="id_ct" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="fecha" class="form-label">Fecha</label>
+                                <input type="date" id="fecha" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="hora" class="form-label">Hora</label>
+                                <input type="time" id="hora" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="no_orden" class="form-label">No_Orden</label>
+                                <input type="text" id="no_orden" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="id_c" class="form-label">Id_C</label>
+                                <input type="text" id="id_c" class="form-control">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <button class="btn btn-success boton">Agregar</button>
+                        <button class="btn btn-primary boton">Modificar</button>
+                        <button class="btn btn-warning boton">Consulta Gral</button>
+                        <button class="btn btn-danger boton">Eliminar</button>
+
+                        <div class="buscar">
+                            <input type="text" class="form-control" placeholder="Id_Ct">
+                            <button class="btn btn-info">Buscar un Registro</button>
+                        </div>
+                    </div>
+                </div>
+                <table class="table table-striped table-hover mt-4">
+                    <thead>
+                        <tr>
+                            <th>Id_Ct</th>
+                            <th>Fecha</th>
+                            <th>Hora</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Aquí irán los registros -->
+                    </tbody>
+                </table>
+            </div>
+            <!-- VentanaOrden Tab -->
+            <div class="tab-pane fade" id="ventanaorden" role="tabpanel" aria-labelledby="ventanaorden-tab">
+                <div class="row">
+                    <div class="col-md-6">
+                        <form>
+                            <div class="mb-3">
+                                <label for="id_vo" class="form-label">Id_VO</label>
+                                <input type="text" id="id_vo" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="tipo_ventana" class="form-label">Tipo_Ventana</label>
+                                <input type="text" id="tipo_ventana" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="largo_v" class="form-label">Largo_v</label>
+                                <input type="text" id="largo_v" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="ancho_v" class="form-label">Ancho_v</label>
+                                <input type="text" id="ancho_v" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="costo" class="form-label">Costo</label>
+                                <input type="text" id="costo" class="form-control">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <button class="btn btn-success boton">Agregar</button>
+                        <button class="btn btn-primary boton">Modificar</button>
+                        <button class="btn btn-warning boton">Consulta Gral</button>
+                        <button class="btn btn-danger boton">Eliminar</button>
+
+                        <div class="buscar">
+                            <input type="text" class="form-control" placeholder="Id_VO">
+                            <button class="btn btn-info">Buscar un Registro</button>
+                        </div>
+                    </div>
+                </div>
+                <table class="table table-striped table-hover mt-4">
+                    <thead>
+                        <tr>
+                            <th>Id_VO</th>
+                            <th>Tipo_Ventana</[_{{{CITATION{{{_1{](https://github.com/la9una/web/tree/ba1073ae044ebb7b538a3b13f0f9598f7c410bb6/docs%2Fbootstrap%2Falignci.md)[_{{{CITATION{{{_2{](https://github.com/GeroCoded/etiflash/tree/d1d72630565ba77180cdd1434a3b83d324545c98/dymo%2Fpanel%2FpanelOpciones.php)[_{{{CITATION{{{_3{](https://github.com/bellzebbus/epe3/tree/be124281fc299f5e200afafaa1a7af25356ef567/header.php)
